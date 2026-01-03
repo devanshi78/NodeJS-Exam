@@ -58,8 +58,8 @@
                         <td><img src="<%= category.image %>" style="width: 150px; height: 100px; object-fit: cover;" alt="<%= category.name %>"></td>
                         <td><%= category.name %></td>
                         <td>
-                          <a href="category/edit/<%= category.id %>" class="btn btn-warning">Edit</a>
-                          <a href="category/delete/<%= category.id %>" class="btn btn-danger">Delete</a>
+                          <a href="/edit/<%= category.id %>" class="btn btn-warning">Edit</a>
+                          <a href="/delete/<%= category.id %>" class="btn btn-danger">Delete</a>
                         </td>
                       </tr>
                     <% }) %>

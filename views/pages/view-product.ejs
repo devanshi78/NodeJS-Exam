@@ -99,7 +99,7 @@
                           <h6><span>₹ </span><%= price %></h6>
 
                           <p class="mb-1"> 
-                            <span class="badge badge-custom"><%= category.name %></span>
+                            <span class="badge badge-custom"><%= category ? category.name : "No Category" %></span>
                           </p>
 
                           <div class="action-btns mt-3">

@@ -22,6 +22,64 @@ This is a **basic E-Commerce Platform** built using **Node.js, Express, MongoDB,
 
 ---
 
+## 🏗 Project Structure
+
+```
+
+├── config
+│ └── db.js
+│
+├── controllers
+│ ├── category.controller.js
+│ ├── product.controller.js
+│ └── user.controller.js
+│
+├── middlewares
+│ ├── imageUpload.js
+│ ├── isAuth.js
+│ └── userRole.js
+│
+├── models
+│ ├── category.model.js
+│ ├── product.model.js
+│ └── user.model.js
+│
+├── routes
+│ ├── category.route.js
+│ ├── product.route.js
+│ └── user.route.js
+│
+├── views
+│ ├── pages
+│ │ ├── add-category.ejs
+│ │ ├── add-product.ejs
+│ │ ├── edit-category.ejs
+│ │ ├── edit-product.ejs
+│ │ ├── login.ejs
+│ │ ├── signup.ejs
+│ │ └── view-category.ejs
+│ │
+│ └── partials
+│ ├── footer.ejs
+│ ├── header.ejs
+│ └── index.ejs
+│
+├── uploads
+│ └── (uploaded product images)
+│
+├── public
+│ └── assets
+│
+├── .env
+├── .env.example
+├── index.js
+├── package.json
+└── README.md
+
+```
+
+---
+
 ## 🔐 Default Admin Credentials
 
 Email: admin@gmail.com  

@@ -1,5 +1,6 @@
 import CategoryModel from "../models/category.model.js";
 import ProductModel from "../models/product.model.js";
+import fs from "fs";
 
 export const addProductPage = async (req, res) => {
     const categories = await CategoryModel.find({});
@@ -53,7 +54,7 @@ export const editProductPage = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const data = await ProductModel.findById(id);
+        const data = await ProductModel.findById(id).populate('category');
 
         const categories = await CategoryModel.find({});
 

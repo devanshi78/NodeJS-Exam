@@ -16,7 +16,7 @@ export const addCategory = async (req, res) => {
     }
 }
 
-export const viewCategoryPage = async(req, res) => {
+export const viewCategoryPage = async (req, res) => {
     try {
         let categories = await CategoryModel.find({});
         return res.render('./pages/view-category.ejs', {
@@ -29,3 +29,42 @@ export const viewCategoryPage = async(req, res) => {
         })
     }
 }
+
+export const editCategoryPage = async (req, res) => {
+    try {
+        let category = await CategoryModel.findById(req.params.id);
+        let categories = await CategoryModel.find({});
+
+        return res.render('./pages/edit-category.ejs', {
+            category,
+            categories
+        });
+    } catch (error) {
+        console.log(error.message);
+        return res.redirect('back');
+    }
+};
+
+export const editCategory = async (req, res) => {
+    try {
+        if (req.file) {
+            req.body.image = req.file.path;
+        }
+
+        await CategoryModel.findByIdAndUpdate(req.params.id, req.body);
+        return res.redirect('/category/view');
+    } catch (error) {
+        console.log(error.message);
+        return res.redirect(req.get('Referrer') || '/');
+    }
+};
+
+export const deleteCategory = async (req, res) => {
+    try {
+        await CategoryModel.findByIdAndDelete(req.params.id);
+        return res.redirect(req.get('Referrer') || '/');
+    } catch (error) {
+        console.log(error.message);
+        return res.redirect(req.get('Referrer') || '/');
+    }
+};

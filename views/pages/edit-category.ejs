@@ -64,7 +64,7 @@
                         >Image</label
                       >
                       <div class="col-sm-9">
-                        <img src="/<%= data.image %>" style="width: 100px; height: 100px; object-fit: cover;" alt="<%= data.name %>">
+                        <img src="/<%= category.image %>" style="width: 100px; height: 100px; object-fit: cover;" alt="<%= category.name %>">
                       </div>
                     </div>
                     <div class="form-group row">
@@ -73,16 +73,16 @@
                         </label>
                         <div class="col-sm-9">
                             <select name="category" class="form-select">
-                                <option disabled>--- Select Category ---</option>
+                              <option disabled>--- Select Category ---</option>
 
-                                <% categories.forEach(category => { %>
-                                    <option value="<%= category.id %>"
-                                        <%= category.id.toString() === data.category?.toString() ? "selected" : "" %>>
-                                        <%= category.name %>
-                                    </option>
-                                <% }) %>
+                              <% categories.forEach(category => { %>
+                                  <option value="<%= category.id %>"
+                                      <%= category.id.toString() === category.id.toString() ? "selected" : "" %>>
+                                      <%= category.name %>
+                                  </option>
+                              <% }) %>
 
-                            </select>
+                          </select>
                         </div>
                     </div>
                   </div>
